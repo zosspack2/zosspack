@@ -1,633 +1,135 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Zoss Pack | حلول تغليف وطباعة مبتكرة في دبي</title>
-    <meta name="description" content="تقدم Zoss Pack حلول تغليف وطباعة وتوريد ورق عالية الجودة في دبي، الإمارات. شريككم الموثوق للتغليف المخصص والصناديق والأكياس الورقية.">
-    <meta name="keywords" content="تغليف, طباعة, ورق, صناديق, أكياس ورقية, تغليف مخصص, دبي, الإمارات, Zoss Pack">
-    <meta name="author" content="Zoss Pack">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://i.ibb.co/6RDdJp06/logo3.png" type="image/png">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Cairo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Use Cairo font for the body */
-        body {
-            font-family: 'Cairo', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static.wixstatic.com/media/37430f_6af1735f2b3e47b8a011d7b92208d48c~mv2.png/v1/fill/w_1902,h_1575,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/37430f_6af1735f2b3e47b8a011d7b92208d48c~mv2.png');
-            background-size: cover;
-            background-position: center;
-        }
-        /* Custom teal colors to match the logo */
-        .bg-teal-custom { background-color: #0d9488; }
-        .hover\:bg-teal-custom-dark:hover { background-color: #0f766e; }
-        .text-teal-custom { color: #0d9488; }
-        .hover\:text-teal-custom:hover { color: #0f766e; }
-        .bg-teal-custom-light { background-color: #ccfbf1; }
-        .focus\:ring-teal-custom:focus { --tw-ring-color: #0d9488; }
-        .border-teal-custom { border-color: #0d9488; }
-
-        /* Header scroll effect */
-        #header.scrolled {
-            background-color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        #header.scrolled .nav-link, #header.scrolled #mobile-menu-button, #header.scrolled #lang-switcher {
-            color: #374151; /* gray-700 */
-        }
-        #header.scrolled .nav-link:hover, #header.scrolled #lang-switcher:hover {
-            color: #0d9488; /* text-teal-custom */
-        }
-
-        /* Scroll animation */
-        .scroll-reveal {
-            opacity: 0;
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .scroll-reveal.slide-up { transform: translateY(50px); }
-        .scroll-reveal.slide-left { transform: translateX(-50px); }
-        .scroll-reveal.slide-right { transform: translateX(50px); }
-
-        .scroll-reveal.is-visible {
-            opacity: 1;
-            transform: translate(0, 0);
-        }
-        
-        /* Back to top button */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            display: none;
-            z-index: 100;
-        }
-        html[dir="rtl"] #back-to-top { left: 20px; }
-        html[dir="ltr"] #back-to-top { right: 20px; }
-        
-        /* Animated Gradient Background */
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .animated-gradient {
-            background-size: 200% 200%;
-            background-image: linear-gradient(45deg, #0d9488, #0f766e, #134e4a);
-            animation: gradient-animation 15s ease infinite;
-        }
-
-        /* Preloader Styles */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.75s ease-out, visibility 0.75s ease-out;
-        }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        #preloader img {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-    </style>
-
-    <!-- Schema Markup (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Corporation",
-      "name": "Zoss Pack",
-      "url": "https://zosspack.ae",
-      "logo": "https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+971-4-886-6380",
-        "contactType": "customer service",
-        "email": "info@zoss.ae"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Dubai Investment Park 2",
-        "addressLocality": "Dubai",
-        "addressCountry": "AE"
-      },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61575127876927&locale=ar_AR",
-        "https://www.instagram.com/zosspack/"
-      ]
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071c1a">
+  <title>Zoss Pack | فن التغليف الراقي</title>
+  <meta name="description" content="Zoss Pack — حلول تغليف وطباعة فاخرة في دبي، مصممة لتمنح علامتك حضورًا استثنائيًا.">
+  <link rel="icon" href="https://i.ibb.co/6RDdJp06/logo3.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#061916;--ink2:#0a2a26;--brand:#18c7ad;--brand2:#86f7dc;--cream:#f3f0e7;--white:#fff;--muted:#63706d;--line:rgba(7,28,26,.12);--shadow:0 24px 70px rgba(4,35,31,.14);--r:28px;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:100px}body{font-family:"Cairo",sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button,input,textarea{font:inherit}.container{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0b8e7d}.eyebrow:before{content:"";width:28px;height:2px;background:var(--brand)}.section{padding:120px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:58px}.section-head h2,.about-copy h2,.contact-copy h2{font-size:clamp(2.2rem,5vw,4.5rem);line-height:1.08;letter-spacing:-.04em;margin-top:14px}.section-head p{max-width:470px;color:var(--muted);line-height:1.9}.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.loader{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;background:var(--ink);color:white;transition:opacity .75s var(--ease),visibility .75s}.loader.done{opacity:0;visibility:hidden}.loader-inner{width:min(310px,72vw);text-align:center}.loader img{width:180px;margin:0 auto 36px;filter:brightness(0) invert(1)}.loader-line{height:2px;background:rgba(255,255,255,.12);overflow:hidden}.loader-line span{display:block;width:0;height:100%;background:var(--brand2);transition:width .25s}.loader small{display:block;margin-top:14px;color:rgba(255,255,255,.55);font-size:.68rem;letter-spacing:.18em}.is-loading{overflow:hidden}.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:1500;border-radius:50%;opacity:0}.cursor-dot{width:6px;height:6px;background:var(--brand2);margin:-3px}.cursor-ring{width:34px;height:34px;border:1px solid rgba(119,242,212,.65);margin:-17px;transition:width .25s,height .25s,margin .25s,background .25s}.cursor-ring.hover{width:58px;height:58px;margin:-29px;background:rgba(119,242,212,.08)}
+    #progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--brand2));z-index:1000}.nav{position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 32px));height:72px;border:1px solid rgba(255,255,255,.14);background:rgba(5,25,23,.55);backdrop-filter:blur(18px);border-radius:22px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 10px;color:white;transition:.55s var(--ease)}.nav.scrolled{top:10px;background:rgba(7,28,26,.92);box-shadow:0 15px 45px rgba(0,0,0,.2)}.logo img{width:150px;filter:brightness(0) invert(1)}.nav-links{display:flex;align-items:center;gap:30px;font-size:.86rem;font-weight:700}.nav-links a{opacity:.6;transition:.25s;position:relative}.nav-links a:after{content:"";position:absolute;right:0;left:0;bottom:-9px;height:2px;background:var(--brand2);transform:scaleX(0);transition:.35s var(--ease)}.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--brand2)}.nav-links a.active:after{transform:scaleX(1)}.nav-actions{display:flex;align-items:center;gap:10px}.lang{border:1px solid rgba(255,255,255,.2);color:white;background:transparent;border-radius:13px;padding:10px 13px;cursor:pointer}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:15px;padding:14px 22px;background:var(--brand);color:var(--ink);font-weight:900;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s;box-shadow:0 12px 28px rgba(24,199,173,.2);position:relative;overflow:hidden}.btn:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35),transparent 75%);transform:translateX(-130%);transition:transform .7s}.btn:hover:before{transform:translateX(130%)}.btn:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(24,199,173,.35)}.btn.light{background:white}.btn.outline{background:transparent;color:white;border:1px solid rgba(255,255,255,.24);box-shadow:none}.menu-btn{display:none;background:none;border:0;color:white;font-size:1.6rem;cursor:pointer}
+    .hero{min-height:100vh;background:radial-gradient(circle at 15% 15%,#15594f 0,transparent 27%),radial-gradient(circle at 80% 70%,#0d4f47 0,transparent 30%),var(--ink);color:white;position:relative;display:flex;align-items:center;padding:150px 0 80px;overflow:hidden}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,28,26,.1),rgba(7,28,26,.2)),url('https://static.wixstatic.com/media/37430f_6af1735f2b3e47b8a011d7b92208d48c~mv2.png/v1/fill/w_1902,h_1575,al_c,q_95,enc_avif,quality_auto/37430f_6af1735f2b3e47b8a011d7b92208d48c~mv2.png') center/cover;opacity:.12;mix-blend-mode:luminosity}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;position:relative;z-index:2}.hero h1{font-size:clamp(3.4rem,7vw,7.4rem);line-height:.99;letter-spacing:-.055em;margin:22px 0 26px}.hero h1 span{color:var(--brand2);display:block}.hero-text>p{max-width:610px;color:rgba(255,255,255,.69);line-height:2;font-size:1.03rem}.hero-actions{display:flex;gap:12px;margin-top:34px}.trust{display:flex;align-items:center;gap:16px;margin-top:48px;color:rgba(255,255,255,.62);font-size:.8rem}.avatars{display:flex}.avatars img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:3px solid var(--ink);margin-inline-start:-11px}.scene{height:560px;position:relative;perspective:1200px;transform-style:preserve-3d}.pack-card{position:absolute;border-radius:30px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.2);transition:transform .12s linear}.pack-card img{width:100%;height:100%;object-fit:cover}.pack-main{width:72%;height:76%;top:8%;left:14%;transform:rotateY(-8deg) rotateX(4deg)}.pack-float{width:42%;height:38%;right:-2%;bottom:4%;transform:translateZ(100px) rotate(8deg)}.pack-label{position:absolute;left:0;top:20%;padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.23);backdrop-filter:blur(15px);transform:translateZ(130px);font-size:.78rem}.orb{position:absolute;border-radius:50%;filter:blur(1px);animation:float 5s ease-in-out infinite}.orb.one{width:90px;height:90px;right:4%;top:4%;background:linear-gradient(145deg,var(--brand2),transparent)}.orb.two{width:45px;height:45px;left:6%;bottom:10%;background:var(--brand);animation-delay:-2s}@keyframes float{50%{transform:translateY(-22px) rotate(12deg)}}.scroll-cue{position:absolute;bottom:26px;left:50%;z-index:4;width:28px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:20px}.scroll-cue:after{content:"";position:absolute;top:8px;left:12px;width:3px;height:8px;border-radius:4px;background:var(--brand2);animation:scroll 1.8s infinite}@keyframes scroll{to{transform:translateY(17px);opacity:0}}
+    .marquee{background:var(--brand);overflow:hidden;padding:17px 0;white-space:nowrap}.marquee-track{display:inline-flex;gap:42px;animation:marquee 22s linear infinite;font-weight:900}.marquee span:after{content:"✦";margin-inline-start:42px}@keyframes marquee{to{transform:translateX(50%)}}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{position:relative;min-height:470px;border-radius:var(--r);overflow:hidden;color:white;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;transform-style:preserve-3d;transition:transform .2s}.service:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(2,20,17,.9));z-index:-1}.service img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s}.service:hover img{transform:scale(1.08)}.service-index{position:absolute;top:26px;right:28px;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);font-weight:800}.service h3{font-size:2rem;margin-bottom:10px}.service p{font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.72)}
+    .work{background:var(--ink);color:white}.work .section-head p{color:rgba(255,255,255,.55)}.work .eyebrow{color:var(--brand2)}.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:310px 260px;gap:14px}.shot{position:relative;border-radius:23px;overflow:hidden}.shot:first-child{grid-row:span 2}.shot:nth-child(4){grid-column:span 2}.shot img{width:100%;height:100%;object-fit:cover;transition:.7s}.shot:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.65));opacity:0;transition:.35s}.shot:hover img{transform:scale(1.07)}.shot:hover:after{opacity:1}.shot b{position:absolute;bottom:20px;right:22px;z-index:2;transform:translateY(15px);opacity:0;transition:.35s}.shot:hover b{transform:none;opacity:1}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.about-visual{position:relative}.about-visual>img{height:650px;width:100%;object-fit:cover;border-radius:34px;box-shadow:var(--shadow)}.experience{position:absolute;left:-28px;bottom:45px;background:var(--brand);padding:25px;border-radius:22px;width:185px;box-shadow:var(--shadow)}.experience strong{font-size:3.2rem;display:block;line-height:1}.about-copy p{color:var(--muted);line-height:2;margin:26px 0}.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:30px 0 38px}.feature{padding:18px;border:1px solid var(--line);border-radius:16px;font-weight:800}.feature i{font-style:normal;color:#0b9b88;margin-inline-end:8px}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:100px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:48px 10px;border-inline-end:1px solid var(--line)}.stat:last-child{border:0}.stat strong{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;color:#0b8e7d}.stat span{display:block;color:var(--muted);margin-top:7px}
+    .contact{background:linear-gradient(145deg,#082521,#061715);color:white}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}.contact-copy p{color:rgba(255,255,255,.6);line-height:1.9;margin:25px 0 38px}.contact-line{display:flex;gap:15px;align-items:center;margin:18px 0;color:rgba(255,255,255,.8)}.contact-line i{width:45px;height:45px;background:rgba(119,242,212,.1);border:1px solid rgba(119,242,212,.2);border-radius:14px;display:grid;place-items:center;font-style:normal}.form{background:white;color:var(--ink);padding:40px;border-radius:28px;box-shadow:0 35px 80px rgba(0,0,0,.25)}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:14px}.field label{display:block;font-size:.76rem;font-weight:800;margin:0 4px 7px}.field input,.field textarea{width:100%;border:1px solid var(--line);background:#f7f8f5;border-radius:13px;padding:15px;outline:0;transition:.25s}.field input:focus,.field textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(24,199,173,.1)}.form .btn{width:100%}.footer{background:#04100f;color:rgba(255,255,255,.55);padding:30px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer img{width:125px;filter:brightness(0) invert(1);opacity:.8}.socials{display:flex;gap:9px}.socials a{width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:11px;display:grid;place-items:center;transition:.25s}.socials a:hover{background:var(--brand);color:var(--ink)}
+    .whatsapp{position:fixed;z-index:45;left:22px;bottom:22px;width:58px;height:58px;border-radius:20px;background:#20c978;color:#06241a;display:grid;place-items:center;font-size:1.5rem;font-weight:900;box-shadow:0 15px 35px rgba(32,201,120,.35);transition:.3s}.whatsapp:hover{transform:translateY(-5px) rotate(-5deg)}
+    .hero-grid{grid-template-columns:1fr 1fr}.scene{height:620px;perspective:1400px;isolation:isolate}.stage-glow{position:absolute;width:460px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(74,240,204,.24),rgba(20,153,134,.07) 48%,transparent 70%);filter:blur(9px)}.stage-floor{position:absolute;width:420px;height:135px;left:50%;bottom:37px;transform:translateX(-50%) rotateX(68deg);border-radius:50%;background:radial-gradient(ellipse,rgba(5,8,7,.7),transparent 68%);filter:blur(4px)}.orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(134,247,220,.17);border-radius:50%;transform-style:preserve-3d}.orbit.a{width:470px;height:470px;transform:translate(-50%,-50%) rotateX(68deg);animation:orbit-spin 18s linear infinite}.orbit.b{width:385px;height:385px;transform:translate(-50%,-50%) rotateY(65deg);animation:orbit-spin-b 15s linear infinite}.orbit:after{content:"";position:absolute;width:9px;height:9px;background:var(--brand2);border-radius:50%;top:8%;left:17%;box-shadow:0 0 20px var(--brand2)}@keyframes orbit-spin{to{transform:translate(-50%,-50%) rotateX(68deg) rotateZ(360deg)}}@keyframes orbit-spin-b{to{transform:translate(-50%,-50%) rotateY(65deg) rotateZ(-360deg)}}.cube-wrap{position:absolute;z-index:4;left:50%;top:48%;width:250px;height:320px;transform:translate(-50%,-50%) rotateX(-10deg) rotateY(-24deg);transform-style:preserve-3d;transition:transform .28s ease-out}.box3d{position:relative;width:250px;height:320px;transform-style:preserve-3d;animation:box-float 6s ease-in-out infinite}.face{position:absolute;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(255,255,255,.12);backface-visibility:hidden;background:#e9e6dc}.face:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(6,25,22,.035) 19px 20px),repeating-linear-gradient(-45deg,transparent 0 18px,rgba(6,25,22,.035) 19px 20px)}.face.front,.face.back{width:250px;height:320px}.face.front{transform:translateZ(65px);background:linear-gradient(145deg,#f8f5ed,#d6d2c5)}.face.back{transform:rotateY(180deg) translateZ(65px)}.face.right,.face.left{width:130px;height:320px;left:60px;background:linear-gradient(90deg,#a9a599,#d9d5ca)}.face.right{transform:rotateY(90deg) translateZ(125px)}.face.left{transform:rotateY(-90deg) translateZ(125px)}.face.top,.face.bottom{width:250px;height:130px;top:95px}.face.top{transform:rotateX(90deg) translateZ(160px);background:#f4f1e8}.face.bottom{transform:rotateX(-90deg) translateZ(160px);background:#aaa69b}.cube-brand{position:relative;z-index:2;text-align:center;color:#8d1831;display:flex;flex-direction:column;align-items:center}.zoss-mark{width:62px;height:62px;border:3px solid currentColor;display:grid;place-items:center;transform:rotate(45deg);font-style:normal;margin-bottom:28px}.zoss-mark:after{content:"Z";transform:rotate(-45deg);font-size:2rem;font-weight:900;line-height:1}.cube-brand strong{font-size:2.15rem;line-height:1;letter-spacing:.12em}.cube-brand small,.cube-brand span{font-size:.57rem;letter-spacing:.28em;color:#26312e;margin:7px 0}.cube-edge{position:absolute;inset:12px;border:1px solid rgba(141,24,49,.22);z-index:2}.material-card{position:absolute;z-index:5;width:150px;padding:8px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(15px);box-shadow:0 26px 50px rgba(0,0,0,.25);transition:transform .4s var(--ease)}.material-card img{width:100%;height:125px;object-fit:cover;border-radius:12px}.material-card span{display:flex;justify-content:space-between;padding:10px 5px 3px;font-size:.58rem;letter-spacing:.12em;color:rgba(255,255,255,.68)}.material-one{left:0;top:18%;transform:rotate(-7deg) translateZ(100px)}.material-two{right:-2%;bottom:13%;transform:rotate(7deg) translateZ(120px)}.scene-spec{position:absolute;z-index:6;right:4%;top:13%;writing-mode:vertical-rl;color:rgba(255,255,255,.45);font-size:.58rem;letter-spacing:.2em}.scene-badge{position:absolute;z-index:6;bottom:7%;left:15%;display:flex;align-items:center;gap:10px;font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.6)}.scene-badge i{width:8px;height:8px;background:var(--brand2);border-radius:50%;box-shadow:0 0 15px var(--brand2);animation:pulse-dot 1.8s infinite}@keyframes box-float{50%{transform:translateY(-16px) rotateZ(1.5deg)}}@keyframes pulse-dot{50%{opacity:.35;transform:scale(.7)}}
+    .process{padding:30px 0 120px}.process-shell{background:var(--ink2);color:white;border-radius:36px;padding:58px;position:relative;overflow:hidden}.process-shell:before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(24,199,173,.12);filter:blur(70px);top:-220px;left:-100px}.process-top{position:relative;display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:55px}.process-top h2{font-size:clamp(2rem,4vw,3.7rem);line-height:1.1;max-width:600px}.process-top p{max-width:390px;color:rgba(255,255,255,.55);line-height:1.8}.steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}.steps:before{content:"";position:absolute;top:25px;right:8%;left:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(134,247,220,.5),transparent)}.step{position:relative;padding:0 18px}.step-no{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#123c36;border:1px solid rgba(134,247,220,.28);color:var(--brand2);font-size:.76rem;font-weight:900;margin-bottom:28px;transition:.35s}.step:hover .step-no{background:var(--brand);color:var(--ink);transform:scale(1.12)}.step h3{font-size:1.15rem;margin-bottom:10px}.step p{font-size:.78rem;line-height:1.8;color:rgba(255,255,255,.48)}
+    .work{position:relative}.work:before{content:"ZOSS / SELECTED WORK";position:absolute;top:42px;left:4%;font-size:clamp(3rem,9vw,9rem);font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.025);white-space:nowrap}.shot{border:1px solid rgba(255,255,255,.08)}.shot:before{content:attr(data-no);position:absolute;z-index:3;top:18px;left:18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(6,25,22,.6);backdrop-filter:blur(8px);font-size:.62rem;color:rgba(255,255,255,.75)}.shot b{display:flex;align-items:center;gap:10px}.shot b:before{content:"";width:20px;height:2px;background:var(--brand2)}
+    .feature{transition:.35s var(--ease);background:rgba(255,255,255,.25)}.feature:hover{transform:translateY(-5px);border-color:rgba(24,199,173,.45);background:white;box-shadow:0 16px 36px rgba(7,28,26,.07)}.contact{position:relative;overflow:hidden}.contact:before{content:"";position:absolute;width:600px;height:600px;border:1px solid rgba(134,247,220,.09);border-radius:50%;right:-300px;top:-260px;box-shadow:0 0 0 90px rgba(134,247,220,.025),0 0 0 180px rgba(134,247,220,.018)}
+    @media(pointer:fine){body{cursor:none}a,button,input,textarea{cursor:none}.cursor-dot,.cursor-ring{opacity:1}}
+    @media(max-width:900px){.scene{height:540px}.process-shell{padding:42px 28px}.process-top{align-items:start;flex-direction:column}.steps{grid-template-columns:1fr 1fr;gap:40px 12px}.steps:before{display:none}.material-one{left:4%}.material-two{right:4%}}
+    @media(max-width:600px){.scene{height:445px}.cube-wrap{transform:translate(-50%,-50%) scale(.78) rotateX(-10deg) rotateY(-24deg)}.stage-glow{width:360px;height:360px}.orbit.a{width:350px;height:350px}.orbit.b{width:300px;height:300px}.material-card{width:108px;padding:6px;border-radius:14px}.material-card img{height:82px}.material-card span{font-size:.43rem}.material-one{top:12%;left:0}.material-two{bottom:8%;right:0}.scene-spec{display:none}.scene-badge{left:5%}.process{padding:0 0 75px}.process-shell{border-radius:24px;padding:35px 22px}.steps{grid-template-columns:1fr}.step{padding:0;display:grid;grid-template-columns:50px 1fr;column-gap:18px}.step-no{grid-row:span 2;margin:0}.step p{grid-column:2}.cursor-dot,.cursor-ring{display:none}}
+    @media(max-width:900px){.nav-links,.nav-actions .btn{display:none}.menu-btn{display:block}.nav.open{height:auto;align-items:flex-start;padding-top:18px;padding-bottom:22px}.nav.open .nav-links{display:flex;position:absolute;top:80px;right:0;left:0;background:rgba(7,28,26,.98);border-radius:0 0 20px 20px;flex-direction:column;padding:25px}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-text{text-align:center}.hero-text>p{margin:auto}.hero-actions,.trust{justify-content:center}.scene{height:430px;width:min(540px,100%);margin:auto}.services-grid{grid-template-columns:1fr}.service{min-height:380px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:330px 240px 240px}.shot:first-child{grid-column:span 2;grid-row:auto}.shot:nth-child(4){grid-column:auto}.about-grid{gap:50px}.about-visual>img{height:500px}.section{padding:90px 0}.section-head{align-items:start;flex-direction:column}.contact-grid{gap:50px}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1180px)}.nav{width:calc(100% - 20px)}.logo img{width:125px}.hero{padding-top:130px}.hero h1{font-size:3.35rem}.scene{height:350px;margin-top:30px}.pack-label{display:none}.pack-main{width:78%;left:11%}.hero-actions{flex-direction:column}.btn{width:100%}.trust{margin-top:30px}.section{padding:75px 0}.section-head{margin-bottom:38px}.gallery{display:flex;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}.gallery::-webkit-scrollbar{display:none}.shot{min-width:84vw;height:380px;scroll-snap-align:center}.about-visual>img{height:430px}.experience{left:12px;bottom:18px}.features,.field-row{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-inline-end:0;border-bottom:1px solid var(--line)}.form{padding:25px 18px}.footer-inner{flex-direction:column;text-align:center}.whatsapp{width:52px;height:52px;border-radius:17px}.marquee-track{font-size:.85rem}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+  </style>
+  <style id="luxury-overrides">
+    :root{--ink:#0a0908;--ink2:#15110d;--brand:#c9a45f;--brand2:#f2d797;--cream:#f5f1e8;--muted:#756f64;--line:rgba(42,32,20,.14);--shadow:0 28px 90px rgba(24,16,7,.18)}
+    body{background:var(--cream);color:#17130e}
+    .hero{background:radial-gradient(circle at 14% 12%,#3d2b17 0,transparent 28%),radial-gradient(circle at 78% 76%,#2b2117 0,transparent 34%),var(--ink)}
+    .hero:after{opacity:.085;mix-blend-mode:screen}
+    .eyebrow{color:var(--brand2);letter-spacing:.16em}.eyebrow:before{background:linear-gradient(90deg,var(--brand2),transparent)}
+    .nav{background:rgba(10,9,8,.66);border-color:rgba(242,215,151,.2)}.nav.scrolled{background:rgba(10,9,8,.95);box-shadow:0 18px 55px rgba(0,0,0,.35)}.nav-links a:hover,.nav-links a.active{color:var(--brand2)}.nav-links a.active:after{background:var(--brand2)}
+    .btn{background:linear-gradient(135deg,#f1d694 0%,#c39a55 55%,#f2d797 100%);color:#171108;box-shadow:0 15px 34px rgba(201,164,95,.2)}.btn:hover{box-shadow:0 20px 45px rgba(201,164,95,.35)}.btn.outline{border-color:rgba(242,215,151,.35)}
+    .marquee{background:linear-gradient(90deg,#b98c45,#e0bd76 48%,#b98c45);color:#1a1208}.marquee-track{letter-spacing:.12em}
+    .stage-glow{background:radial-gradient(circle,rgba(237,201,121,.28),rgba(130,88,30,.12) 48%,transparent 72%)}.orbit{border-color:rgba(242,215,151,.25)}.orbit:after{background:var(--brand2);box-shadow:0 0 22px var(--brand2)}.stage-floor{background:radial-gradient(ellipse,rgba(0,0,0,.85),transparent 68%)}
+    .face{background:#272018;border-color:rgba(242,215,151,.17)}.face:after{background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(242,215,151,.045) 19px 20px),repeating-linear-gradient(-45deg,transparent 0 18px,rgba(242,215,151,.045) 19px 20px)}.face.front{background:linear-gradient(145deg,#30271b,#0f0e0c)}.face.back{background:#17130e}.face.right,.face.left{background:linear-gradient(90deg,#0d0c0a,#2d2418)}.face.top{background:#3a2d1b}.face.bottom{background:#080807}.cube-brand{color:#e3c273;gap:10px}.cube-logo{width:142px;filter:brightness(0) saturate(100%) invert(76%) sepia(31%) saturate(670%) hue-rotate(1deg) brightness(91%) contrast(88%);position:relative;z-index:2}.cube-brand small,.cube-brand span{color:#c8b58b}.cube-edge{border-color:rgba(242,215,151,.34)}.zoss-mark{border-color:currentColor}.material-card{background:rgba(20,15,10,.62);border-color:rgba(242,215,151,.28);box-shadow:0 28px 60px rgba(0,0,0,.42)}.material-card span{color:rgba(242,215,151,.8)}.scene-spec{color:rgba(242,215,151,.58)}.scene-badge{color:rgba(242,215,151,.72)}.scene-badge i{background:var(--brand2);box-shadow:0 0 15px var(--brand2)}
+    .service{box-shadow:0 20px 50px rgba(20,12,4,.14)}.service-index{border:1px solid rgba(242,215,151,.35);color:var(--brand2)}.service:after{content:"";position:absolute;right:32px;left:32px;bottom:27px;height:1px;background:linear-gradient(90deg,transparent,rgba(242,215,151,.55),transparent);opacity:.75}
+    .process-shell{background:linear-gradient(145deg,#17120d,#090807);border:1px solid rgba(242,215,151,.2);box-shadow:0 30px 90px rgba(18,10,3,.2)}.process-shell:before{background:rgba(201,164,95,.15)}.step-no{background:#2a2116;border-color:rgba(242,215,151,.32);color:var(--brand2)}.step:hover .step-no{background:var(--brand);color:#171108}.steps:before{background:linear-gradient(90deg,transparent,rgba(242,215,151,.55),transparent)}
+    .work{background:#0a0908}.work .eyebrow{color:var(--brand2)}.work:before{color:rgba(242,215,151,.035)}.shot{border-color:rgba(242,215,151,.16)}.shot:before{background:rgba(20,14,8,.72);color:var(--brand2);border:1px solid rgba(242,215,151,.25)}.shot b:before{background:var(--brand2)}
+    .about-copy h2,.contact-copy h2,.section-head h2,.process-top h2{font-weight:800}.feature{background:rgba(255,255,255,.36);border-color:rgba(114,91,50,.18)}.feature i{color:#aa7d34}.feature:hover{border-color:rgba(201,164,95,.6)}.experience{background:linear-gradient(145deg,#eed28f,#bd914b);color:#171108;box-shadow:0 25px 65px rgba(95,61,18,.25)}.stat strong{color:#ae8037}
+    .contact{background:radial-gradient(circle at 80% 15%,#332516 0,transparent 32%),linear-gradient(145deg,#17110c,#080706)}.contact:before{border-color:rgba(242,215,151,.13)}.contact-line i{background:rgba(242,215,151,.08);border-color:rgba(242,215,151,.26);color:var(--brand2)}.form{box-shadow:0 35px 90px rgba(0,0,0,.42)}.field input:focus,.field textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(201,164,95,.13)}
+    .footer{background:#060504}.socials a:hover{background:var(--brand);color:#171108}.whatsapp{background:#20c978;color:#06241a}
+    .loader{background:#090807}.loader-line{background:rgba(242,215,151,.14)}.loader-line span{background:linear-gradient(90deg,#b98c45,#f2d797)}.cursor-dot{background:var(--brand2)}.cursor-ring{border-color:rgba(242,215,151,.72)}.cursor-ring.hover{background:rgba(242,215,151,.09)}
+    body{font-family:"IBM Plex Sans Arabic","Cairo",sans-serif;line-height:1.75}.hero h1,.section-head h2,.about-copy h2,.contact-copy h2,.process-top h2{font-family:"Noto Kufi Arabic","Cairo",sans-serif;font-weight:600;letter-spacing:-.018em}.hero h1{line-height:1.08}.section-head h2,.about-copy h2,.contact-copy h2,.process-top h2{line-height:1.2}.nav-links,.btn,.eyebrow,.service h3,.step h3{font-family:"IBM Plex Sans Arabic","Cairo",sans-serif}.nav{border-radius:18px}.btn{border-radius:12px}.service{border-radius:22px}.shot{border-radius:18px}.form{border-radius:22px}.process-shell{border-radius:26px}.reveal{transition-duration:.95s}.marquee-track{animation-duration:45s}.orbit.a{animation-duration:30s;opacity:.68}.orbit.b{animation-duration:40s;opacity:.32}.box3d{animation-duration:9s}.service:hover img{transform:scale(1.045)}.whatsapp{width:auto;min-width:86px;padding:0 16px;border-radius:999px;font-size:.72rem!important;white-space:nowrap}
+    @media(max-width:600px){.hero h1{font-size:clamp(2.55rem,11vw,3.2rem)}.process-shell{border-color:rgba(242,215,151,.24)}.service:after{right:22px;left:22px}.whatsapp{min-width:74px;padding:0 13px}}
+  </style>
+  <style id="brand-palette">
+    :root{--ink:#071c1a;--ink2:#0b2b28;--brand:#0d9488;--brand2:#9cebd8;--cream:#f2f7f5;--muted:#60716d;--line:rgba(7,28,26,.13);--shadow:0 28px 90px rgba(4,35,31,.16)}
+    body{background:var(--cream);color:#0a2823}
+    .hero{background:radial-gradient(circle at 14% 12%,#15594f 0,transparent 28%),radial-gradient(circle at 78% 76%,#0d4f47 0,transparent 34%),var(--ink)}.hero:after{opacity:.12;mix-blend-mode:luminosity}
+    .eyebrow{color:var(--brand2)}.eyebrow:before{background:linear-gradient(90deg,var(--brand2),transparent)}
+    .nav{background:rgba(5,25,23,.64);border-color:rgba(156,235,216,.18)}.nav.scrolled{background:rgba(7,28,26,.95);box-shadow:0 18px 55px rgba(0,0,0,.28)}.nav-links a:hover,.nav-links a.active{color:var(--brand2)}.nav-links a.active:after{background:var(--brand2)}
+    .btn{background:linear-gradient(135deg,#c8f5e7 0%,#24cbb2 55%,#0d9488 100%);color:#06231e;box-shadow:0 15px 34px rgba(13,148,136,.22)}.btn:hover{box-shadow:0 20px 45px rgba(13,148,136,.36)}.btn.outline{border-color:rgba(156,235,216,.36)}
+    .marquee{background:linear-gradient(90deg,#0f766e,#18b99f 48%,#0f766e);color:#eafff8}.marquee-track{letter-spacing:.12em}
+    .stage-glow{background:radial-gradient(circle,rgba(74,240,204,.27),rgba(20,153,134,.11) 48%,transparent 72%)}.orbit{border-color:rgba(156,235,216,.25)}.orbit:after{background:var(--brand2);box-shadow:0 0 22px var(--brand2)}.stage-floor{background:radial-gradient(ellipse,rgba(0,12,10,.82),transparent 68%)}
+    .face{background:#123a34;border-color:rgba(156,235,216,.16)}.face:after{background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(156,235,216,.045) 19px 20px),repeating-linear-gradient(-45deg,transparent 0 18px,rgba(156,235,216,.045) 19px 20px)}.face.front{background:linear-gradient(145deg,#17473f,#071a17)}.face.back{background:#0b2b28}.face.right,.face.left{background:linear-gradient(90deg,#061412,#17433b)}.face.top{background:#20584e}.face.bottom{background:#04100e}.cube-brand{color:#a6f3df}.cube-logo{filter:brightness(0) invert(1)}.cube-brand small,.cube-brand span{color:rgba(213,255,246,.72)}.cube-edge{border-color:rgba(156,235,216,.32)}.material-card{background:rgba(5,25,23,.68);border-color:rgba(156,235,216,.24);box-shadow:0 28px 60px rgba(0,0,0,.38)}.material-card span{color:rgba(213,255,246,.8)}.scene-spec{color:rgba(156,235,216,.58)}.scene-badge{color:rgba(213,255,246,.72)}.scene-badge i{background:var(--brand2);box-shadow:0 0 15px var(--brand2)}
+    .service{box-shadow:0 20px 50px rgba(4,35,31,.14)}.service-index{border-color:rgba(156,235,216,.34);color:var(--brand2)}.service:after{background:linear-gradient(90deg,transparent,rgba(156,235,216,.52),transparent)}
+    .process-shell{background:linear-gradient(145deg,#0f3731,#061815);border-color:rgba(156,235,216,.2);box-shadow:0 30px 90px rgba(4,35,31,.2)}.process-shell:before{background:rgba(24,199,173,.13)}.step-no{background:#123c36;border-color:rgba(156,235,216,.3);color:var(--brand2)}.step:hover .step-no{background:var(--brand);color:#06231e}.steps:before{background:linear-gradient(90deg,transparent,rgba(156,235,216,.5),transparent)}
+    .work{background:#071c1a}.work .eyebrow{color:var(--brand2)}.work:before{color:rgba(156,235,216,.035)}.shot{border-color:rgba(156,235,216,.15)}.shot:before{background:rgba(5,25,23,.72);color:var(--brand2);border-color:rgba(156,235,216,.24)}.shot b:before{background:var(--brand2)}
+    .feature{background:rgba(255,255,255,.4);border-color:rgba(7,83,72,.16)}.feature i{color:#0b8e7d}.feature:hover{border-color:rgba(13,148,136,.52)}.experience{background:linear-gradient(145deg,#b9f2df,#18b99f);color:#06231e;box-shadow:0 25px 65px rgba(4,92,79,.22)}.stat strong{color:#0b8e7d}
+    .contact{background:radial-gradient(circle at 80% 15%,#16473f 0,transparent 32%),linear-gradient(145deg,#0b2b28,#061512)}.contact:before{border-color:rgba(156,235,216,.12)}.contact-line i{background:rgba(156,235,216,.08);border-color:rgba(156,235,216,.24);color:var(--brand2)}.form{box-shadow:0 35px 90px rgba(0,0,0,.34)}.field input:focus,.field textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(13,148,136,.13)}
+    .footer{background:#04100f}.socials a:hover{background:var(--brand);color:#06231e}.loader{background:#071c1a}.loader-line{background:rgba(156,235,216,.14)}.loader-line span{background:linear-gradient(90deg,#0f766e,#9cebd8)}.cursor-dot{background:var(--brand2)}.cursor-ring{border-color:rgba(156,235,216,.72)}.cursor-ring.hover{background:rgba(156,235,216,.09)}
+  </style>
+  <style id="gallery-more-styles">
+    .gallery{grid-auto-rows:260px}.gallery-more{display:none}.gallery.show-all .gallery-more{display:block;animation:gallery-more-in .75s var(--ease) both}.gallery.show-all .gallery-more:nth-of-type(6){animation-delay:.06s}.gallery.show-all .gallery-more:nth-of-type(7){animation-delay:.12s}.gallery.show-all .gallery-more:nth-of-type(8){animation-delay:.18s}.gallery.show-all .gallery-more:nth-of-type(9){animation-delay:.24s}.gallery.show-all .gallery-more:nth-of-type(10){animation-delay:.3s}@keyframes gallery-more-in{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}
+    .gallery-toggle-wrap{display:flex;justify-content:center;margin-top:38px}.gallery-toggle{display:inline-flex;align-items:center;gap:13px;border:1px solid rgba(156,235,216,.3);background:rgba(156,235,216,.06);color:#eafff8;border-radius:999px;padding:10px 11px 10px 22px;font-weight:700;cursor:pointer;transition:transform .35s var(--ease),background .35s,color .35s,border-color .35s}.gallery-toggle:hover{transform:translateY(-3px);background:var(--brand2);border-color:var(--brand2);color:var(--ink)}.gallery-toggle i{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--brand);color:white;font-style:normal;font-size:1.25rem;line-height:1;transition:transform .45s var(--ease)}.gallery-toggle[aria-expanded="true"] i{transform:rotate(45deg)}
+    @media(max-width:600px){.gallery{grid-auto-rows:auto}.gallery-toggle-wrap{margin-top:26px}.gallery-toggle{width:100%;justify-content:space-between;padding-inline-start:20px}.gallery.show-all .gallery-more{display:block;flex:0 0 84vw}}
+  </style>
+  <style id="firebase-form-styles">
+    [hidden]{display:none!important}
+    .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+    .form-status{min-height:24px;margin-top:14px;font-size:.82rem;text-align:center;color:var(--muted)}
+    .form-status.success{color:#0b8e7d}.form-status.error{color:#c53d51}
+    .form .btn:disabled{opacity:.6;cursor:wait;transform:none}
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <img src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="Zoss Pack Logo" class="h-12">
-    </div>
-
-    <!-- Header Section -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#">
-                <img src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png" alt="Zoss Pack Logo" class="h-8 md:h-10">
-            </a>
-            <div class="hidden md:flex items-center">
-                <div id="main-nav" class="flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-white transition duration-300" data-key="navHome">الرئيسية</a>
-                    <a href="#services" class="nav-link text-white transition duration-300" data-key="navServices">خدماتنا</a>
-                    <a href="#gallery" class="nav-link text-white transition duration-300" data-key="navGallery">أعمالنا</a>
-                    <a href="#about" class="nav-link text-white transition duration-300" data-key="navAbout">من نحن</a>
-                    <a href="#contact" class="nav-link text-white transition duration-300" data-key="navContact">اتصل بنا</a>
-                </div>
-                <button id="lang-switcher" class="nav-link text-white font-bold mx-4">EN</button>
-                <a href="#contact" class="hidden md:block bg-teal-custom text-white px-6 py-2 rounded-full hover:bg-teal-custom-dark transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1" data-key="navQuote">اطلب الآن</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4">
-            <a href="#home" class="block py-2 text-gray-600 hover:text-teal-custom" data-key="navHome">الرئيسية</a>
-            <a href="#services" class="block py-2 text-gray-600 hover:text-teal-custom" data-key="navServices">خدماتنا</a>
-            <a href="#gallery" class="block py-2 text-gray-600 hover:text-teal-custom" data-key="navGallery">أعمالنا</a>
-            <a href="#about" class="block py-2 text-gray-600 hover:text-teal-custom" data-key="navAbout">من نحن</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-teal-custom" data-key="navContact">اتصل بنا</a>
-            <a href="#contact" class="block mt-4 bg-teal-custom text-white text-center px-6 py-2 rounded-full hover:bg-teal-custom-dark" data-key="navQuote">اطلب الآن</a>
-            <button id="mobile-lang-switcher" class="w-full mt-4 py-2 text-gray-600 font-bold hover:text-teal-custom">EN</button>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-bg text-white min-h-screen flex items-center justify-center">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 scroll-reveal slide-up" data-key="heroTitle">Zoss Pack: شريككم الموثوق للتغليف</h1>
-                <p class="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 scroll-reveal slide-up" style="transition-delay: 0.2s;" data-key="heroSubtitle">نقدم حلول تغليف وطباعة وتوريد ورق مبتكرة وآمنة تلبي جميع احتياجاتكم.</p>
-                <a href="#services" class="bg-white text-teal-custom font-bold px-10 py-3 rounded-full text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 scroll-reveal slide-up" style="transition-delay: 0.4s;" data-key="heroButton">اكتشف خدماتنا</a>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 scroll-reveal slide-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800" data-key="servicesTitle">خدماتنا المتكاملة</h2>
-                    <p class="text-gray-600 mt-2" data-key="servicesSubtitle">حلول مصممة خصيصًا لتناسب أعمالك.</p>
-                </div>
-
-                <div class="space-y-20">
-                    <!-- Service 1: Packaging -->
-                    <div class="flex flex-col md:flex-row items-center gap-12">
-                        <div class="md:w-1/2 scroll-reveal slide-right">
-                            <div class="h-96 rounded-lg shadow-xl overflow-hidden">
-                                <img src="https://i.ibb.co/bjNxNpTq/packaging.png" alt="خدمة التغليف" class="w-full h-full object-cover object-center">
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 scroll-reveal slide-left">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-4" data-key="service1Title">تغليف</h3>
-                            <p class="text-gray-600 leading-relaxed" data-key="service1Desc">نصمم وننفذ حلول تغليف فريدة تناسب هوية منتجك وتحميه بفعالية. من الصناديق المخصصة إلى الملصقات المبتكرة، نضمن أن منتجك يترك انطباعًا دائمًا.</p>
-                        </div>
-                    </div>
-
-                    <!-- Service 2: Printing -->
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-                        <div class="md:w-1/2 scroll-reveal slide-left">
-                            <div class="h-96 rounded-lg shadow-xl overflow-hidden">
-                                <img src="https://i.ibb.co/Zpf1yQWb/print.png" alt="خدمة الطباعة" class="w-full h-full object-cover object-center">
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 scroll-reveal slide-right">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-4" data-key="service2Title">طباعة</h3>
-                            <p class="text-gray-600 leading-relaxed" data-key="service2Desc">خدمات طباعة عالية الجودة على مواد التغليف لتعزيز علامتك التجارية. نستخدم أحدث التقنيات لضمان ألوان زاهية وتفاصيل دقيقة تبرز جمال منتجك.</p>
-                        </div>
-                    </div>
-
-                    <!-- Service 3: Paper Supply -->
-                    <div class="flex flex-col md:flex-row items-center gap-12">
-                        <div class="md:w-1/2 scroll-reveal slide-right">
-                            <div class="h-96 rounded-lg shadow-xl overflow-hidden">
-                                <img src="https://i.ibb.co/N6XYpzgt/paper.png" alt="خدمة توريد الورق" class="w-full h-full object-cover object-center">
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 scroll-reveal slide-left">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-4" data-key="service3Title">توريد ورق</h3>
-                            <p class="text-gray-600 leading-relaxed" data-key="service3Desc">نوفر مجموعة واسعة من أجود أنواع الورق والكرتون لكافة متطلباتكم. سواء كنتم بحاجة إلى ورق للتغليف أو للطباعة، لدينا الخيارات التي تناسبكم.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 scroll-reveal slide-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800" data-key="galleryTitle">معرض أعمالنا</h2>
-                    <p class="text-gray-600 mt-2" data-key="gallerySubtitle">نظرة على بعض المشاريع التي نفخر بها.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105"><img src="https://i.ibb.co/ZzFR9fVd/mo-1.jpg" alt="صورة مشروع 1" class="w-full h-full object-cover object-center"></div>
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105" style="transition-delay: 0.1s;"><img src="https://i.ibb.co/nM49xdXq/mo-2.jpg" alt="صورة مشروع 2" class="w-full h-full object-cover object-center"></div>
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105" style="transition-delay: 0.2s;"><img src="https://i.ibb.co/5XxvSmkL/mo3.jpg" alt="صورة مشروع 3" class="w-full h-full object-cover object-center"></div>
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105" style="transition-delay: 0.3s;"><img src="https://i.ibb.co/sJCzXyCp/mo4.jpg" alt="صورة مشروع 4" class="w-full h-full object-cover object-center"></div>
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105" style="transition-delay: 0.4s;"><img src="https://i.ibb.co/tTk7y1sj/mo5.jpg" alt="صورة مشروع 5" class="w-full h-full object-cover object-center"></div>
-                    <div class="rounded-lg shadow-lg overflow-hidden aspect-square scroll-reveal slide-up transition-all duration-300 hover:shadow-2xl hover:scale-105" style="transition-delay: 0.5s;"><img src="https://i.ibb.co/gLKv5LZZ/mo-13-2.jpg" alt="صورة مشروع 6" class="w-full h-full object-cover object-center"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2 scroll-reveal slide-right">
-                        <img src="https://i.ibb.co/DPsY8S68/zoss3.png" alt="فريق عمل زوس باك" class="rounded-lg shadow-xl w-full">
-                    </div>
-                    <div class="md:w-1/2 scroll-reveal slide-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-key="aboutTitle">من نحن؟</h2>
-                        <p class="text-gray-600 mb-4 leading-relaxed" data-key="aboutDesc1">في Zoss Pack، نؤمن بأن التغليف هو أكثر من مجرد صندوق. إنه الانطباع الأول لمنتجك وفرصة لتعزيز علامتك التجارية. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في عالم التغليف.</p>
-                        <p class="text-gray-600 mb-6 leading-relaxed" data-key="aboutDesc2">فريقنا من الخبراء مستعد دائمًا لمواجهة التحديات وتقديم حلول ذكية وفعالة من حيث التكلفة.</p>
-                        <a href="#contact" class="bg-teal-custom text-white font-bold px-8 py-3 rounded-full hover:bg-teal-custom-dark transition-all duration-300" data-key="aboutButton">تواصل معنا</a>
-                    </div>
-                </div>
-            </section>
-
-        <!-- Stats Counter Section -->
-        <section id="stats" class="py-20 text-white scroll-reveal slide-up animated-gradient" style="background-attachment: fixed;">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div><h3 class="text-5xl font-bold" data-target="500">0</h3><p class="mt-2 text-lg" data-key="stats1">مشروع مكتمل</p></div>
-                    <div><h3 class="text-5xl font-bold" data-target="250">0</h3><p class="mt-2 text-lg" data-key="stats2">عميل سعيد</p></div>
-                    <div><h3 class="text-5xl font-bold" data-target="10">0</h3><p class="mt-2 text-lg" data-key="stats3">سنوات من الخبرة</p></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-gray-100 scroll-reveal slide-up">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800" data-key="testimonialsTitle">ماذا يقول عملاؤنا؟</h2><p class="text-gray-600 mt-2" data-key="testimonialsSubtitle">شهادات نفخر بها من شركاء نجاحنا.</p></div>
-                <div class="relative max-w-3xl mx-auto">
-                    <div id="testimonial-container" class="overflow-hidden">
-                        <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
-                            <div class="w-full flex-shrink-0 px-4"><div class="bg-white p-8 rounded-lg shadow-lg text-center"><p class="text-gray-600 italic mb-4" data-key="testimonial1">"تعامل احترافي وجودة منتجات عالية. ساعدنا Zoss Pack في تحسين صورة منتجاتنا في السوق بشكل كبير. نوصي بهم بشدة."</p><p class="font-bold text-gray-800" data-key="testimonial1Name">أحمد المحمدي</p><p class="text-sm text-gray-500" data-key="testimonial1Title">مدير التسويق، شركة النور</p></div></div>
-                            <div class="w-full flex-shrink-0 px-4"><div class="bg-white p-8 rounded-lg shadow-lg text-center"><p class="text-gray-600 italic mb-4" data-key="testimonial2">"الدقة في المواعيد والاهتمام بالتفاصيل هو ما يميز فريق Zoss Pack. كانوا شريكًا حقيقيًا في نجاحنا."</p><p class="font-bold text-gray-800" data-key="testimonial2Name">فاطمة علي</p><p class="text-sm text-gray-500" data-key="testimonial2Title">مؤسس، علامة أزياء محلية</p></div></div>
-                            <div class="w-full flex-shrink-0 px-4"><div class="bg-white p-8 rounded-lg shadow-lg text-center"><p class="text-gray-600 italic mb-4" data-key="testimonial3">"وجدنا لديهم حلول تغليف مبتكرة واقتصادية لم نجدها في أي مكان آخر. خدمة عملاء ممتازة."</p><p class="font-bold text-gray-800" data-key="testimonial3Name">خالد ياسين</p><p class="text-sm text-gray-500" data-key="testimonial3Title">صاحب مصنع للمواد الغذائية</p></div></div>
-                        </div>
-                    </div>
-                    <button id="prev-testimonial" class="absolute top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></button>
-                    <button id="next-testimonial" class="absolute top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section id="cta" class="py-20 text-white scroll-reveal slide-up animated-gradient">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-4" data-key="ctaTitle">هل أنت مستعد للارتقاء بتغليف منتجاتك؟</h2>
-                <p class="max-w-2xl mx-auto mb-8" data-key="ctaSubtitle">دعنا نساعدك في تصميم وتنفيذ حلول التغليف التي تستحقها علامتك التجارية. اطلب عرض سعر مجاني اليوم!</p>
-                <a href="#contact" class="bg-white text-teal-custom font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" data-key="ctaButton">اطلب الآن</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-white scroll-reveal slide-up">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-800" data-key="contactTitle">تواصل معنا</h2><p class="text-gray-600 mt-2" data-key="contactSubtitle">هل لديك استفسار أو مشروع جديد؟ نحن هنا للمساعدة.</p></div>
-                <div class="flex flex-col md:flex-row gap-12">
-                    <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-lg">
-                        <form action="https://formspree.io/f/xwpqeeob" method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <input type="text" name="name" data-key-placeholder="formName" placeholder="الاسم الكامل" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-custom" required>
-                                <input type="email" name="email" data-key-placeholder="formEmail" placeholder="البريد الإلكتروني" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-custom" required>
-                            </div>
-                            <div class="mb-6"><input type="text" name="subject" data-key-placeholder="formSubject" placeholder="الموضوع" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-custom" required></div>
-                            <div class="mb-6"><textarea name="message" data-key-placeholder="formMessage" placeholder="رسالتك" rows="5" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-custom" required></textarea></div>
-                            <div class="text-center"><button type="submit" class="bg-teal-custom text-white font-bold px-10 py-3 rounded-full hover:bg-teal-custom-dark transition-all duration-300 w-full md:w-auto" data-key="formButton">إرسال الرسالة</button></div>
-                        </form>
-                    </div>
-                    <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold mb-4" data-key="contactInfoTitle">معلومات الاتصال</h3>
-                        <div class="space-y-6 text-gray-700">
-                             <p class="flex items-start"><svg class="w-6 h-6 text-teal-custom flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="mx-3" data-key="address">مجمع دبي للاستثمار 2،<br>دبي، الإمارات العربية المتحدة</span></p>
-                             <p class="flex items-center"><svg class="w-6 h-6 text-teal-custom flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+97148866380" class="mx-3 hover:underline" dir="ltr">+971 4 886 6380</a></p>
-                             <p class="flex items-center"><svg class="w-6 h-6 text-teal-custom flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><a href="mailto:info@zoss.ae" class="mx-3 hover:underline">info@zoss.ae</a></p>
-                        </div>
-                        <div class="mt-8"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.6609760326473!2d55.27074699096869!3d25.18092283021985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6952ee270793%3A0xfea9ec652b0714b8!2sZOSS%20PACK!5e0!3m2!1sar!2sdz!4v1752856328651!5m2!1sar!2sdz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white pt-10 pb-6">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center mb-4 space-x-6 space-x-reverse">
-                 <a href="https://www.facebook.com/profile.php?id=61575127876927&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                <a href="https://www.instagram.com/zosspack/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.415 2.175 8.796 2.163 12 2.163zm0 1.626c-3.259 0-3.667.014-4.947.072-2.395.109-3.893 1.604-4.004 4.004-.058 1.279-.072 1.687-.072 4.947s.014 3.668.072 4.947c.11 2.4 1.609 3.894 4.004 4.004 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c2.395-.11 3.893-1.604 4.004-4.004.058-1.279.072-1.687.072-4.947s-.014-3.668-.072-4.947c-.11-2.4-1.609-3.894-4.004-4.004C15.667 3.799 15.259 3.789 12 3.789zm0 4.688a3.525 3.525 0 100 7.05 3.525 3.525 0 000-7.05zm0 1.626a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8zm4.402-3.3a1.013 1.013 0 100-2.025 1.013 1.013 0 000 2.025z" clip-rule="evenodd"/></svg></a>
-            </div>
-            <p data-key="footerRights">© 2025 Zoss Pack. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
-    
-    <a href="#home" id="back-to-top" class="bg-teal-custom text-white p-3 rounded-full shadow-lg hover:bg-teal-custom-dark transition-all duration-300">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
-    </a>
-
-    <script>
-        // Translations
-        const translations = {
-            en: {
-                navHome: "Home",
-                navServices: "Services",
-                navGallery: "Gallery",
-                navAbout: "About Us",
-                navContact: "Contact Us",
-                navQuote: "Order Now",
-                heroTitle: "Zoss Pack: Your Trusted Packaging Partner",
-                heroSubtitle: "We provide innovative and secure packaging, printing, and paper supply solutions to meet all your needs.",
-                heroButton: "Discover Our Services",
-                servicesTitle: "Our Integrated Services",
-                servicesSubtitle: "Solutions tailored to fit your business.",
-                service1Title: "Packaging",
-                service1Desc: "We design and implement unique packaging solutions that fit your product's identity and protect it effectively. From custom boxes to innovative labels, we ensure your product makes a lasting impression.",
-                service2Title: "Printing",
-                service2Desc: "High-quality printing services on packaging materials to enhance your brand. We use the latest technologies to ensure vibrant colors and fine details that highlight your product's beauty.",
-                service3Title: "Paper Supply",
-                service3Desc: "We provide a wide range of the finest paper and cardboard for all your requirements. Whether you need paper for packaging or printing, we have the options that suit you.",
-                galleryTitle: "Our Gallery",
-                gallerySubtitle: "A look at some of the projects we are proud of.",
-                galleryItem1: "Luxury Packaging",
-                galleryItem2: "Gift Boxes",
-                galleryItem3: "Paper Bags",
-                galleryItem4: "Custom Printing",
-                galleryItem5: "Food Packaging",
-                galleryItem6: "Innovative Solutions",
-                aboutTitle: "Who We Are",
-                aboutDesc1: "At Zoss Pack, we believe that packaging is more than just a box. It's your product's first impression and an opportunity to enhance your brand. Since our inception, we have been committed to providing the highest standards of quality and innovation in the world of packaging.",
-                aboutDesc2: "Our team of experts is always ready to face challenges and provide smart, cost-effective solutions.",
-                aboutButton: "Contact Us",
-                stats1: "Projects Completed",
-                stats2: "Happy Clients",
-                stats3: "Years of Experience",
-                testimonialsTitle: "What Our Clients Say",
-                testimonialsSubtitle: "Testimonials we are proud of from our success partners.",
-                testimonial1: "\"Professionalism and high-quality products. Zoss Pack helped us significantly improve our product's image in the market. We highly recommend them.\"",
-                testimonial1Name: "Ahmed Al-Mohammadi",
-                testimonial1Title: "Marketing Manager, Al-Noor Company",
-                testimonial2: "\"Punctuality and attention to detail are what distinguish the Zoss Pack team. They were a true partner in our success.\"",
-                testimonial2Name: "Fatima Ali",
-                testimonial2Title: "Founder, Local Fashion Brand",
-                testimonial3: "\"We found innovative and economical packaging solutions with them that we couldn't find anywhere else. Excellent customer service.\"",
-                testimonial3Name: "Khalid Yassin",
-                testimonial3Title: "Owner, Food Factory",
-                ctaTitle: "Ready to Elevate Your Product Packaging?",
-                ctaSubtitle: "Let us help you design and implement the packaging solutions your brand deserves. Request a free quote today!",
-                ctaButton: "Order Now",
-                contactTitle: "Contact Us",
-                contactSubtitle: "Have a question or a new project? We are here to help.",
-                contactInfoTitle: "Contact Information",
-                address: "Dubai Investment Park 2,<br>Dubai, UAE",
-                formName: "Full Name",
-                formEmail: "Email Address",
-                formSubject: "Subject",
-                formMessage: "Your Message",
-                formButton: "Send Message",
-                footerRights: "© 2025 Zoss Pack. All rights reserved."
-            },
-            ar: {
-                navHome: "الرئيسية",
-                navServices: "خدماتنا",
-                navGallery: "أعمالنا",
-                navAbout: "من نحن",
-                navContact: "اتصل بنا",
-                navQuote: "اطلب الآن",
-                heroTitle: "Zoss Pack: شريككم الموثوق للتغليف",
-                heroSubtitle: "نقدم حلول تغليف وطباعة وتوريد ورق مبتكرة وآمنة تلبي جميع احتياجاتكم.",
-                heroButton: "اكتشف خدماتنا",
-                servicesTitle: "خدماتنا المتكاملة",
-                servicesSubtitle: "حلول مصممة خصيصًا لتناسب أعمالك.",
-                service1Title: "تغليف",
-                service1Desc: "نصمم وننفذ حلول تغليف فريدة تناسب هوية منتجك وتحميه بفعالية. من الصناديق المخصصة إلى الملصقات المبتكرة، نضمن أن منتجك يترك انطباعًا دائمًا.",
-                service2Title: "طباعة",
-                service2Desc: "خدمات طباعة عالية الجودة على مواد التغليف لتعزيز علامتك التجارية. نستخدم أحدث التقنيات لضمان ألوان زاهية وتفاصيل دقيقة تبرز جمال منتجك.",
-                service3Title: "توريد ورق",
-                service3Desc: "نوفر مجموعة واسعة من أجود أنواع الورق والكرتون لكافة متطلباتكم. سواء كنتم بحاجة إلى ورق للتغليف أو للطباعة، لدينا الخيارات التي تناسبكم.",
-                galleryTitle: "معرض أعمالنا",
-                gallerySubtitle: "نظرة على بعض المشاريع التي نفخر بها.",
-                galleryItem1: "تغليف فاخر",
-                galleryItem2: "صناديق هدايا",
-                galleryItem3: "أكياس ورقية",
-                galleryItem4: "طباعة مخصصة",
-                galleryItem5: "تغليف غذائي",
-                galleryItem6: "حلول مبتكرة",
-                aboutTitle: "من نحن؟",
-                aboutDesc1: "في Zoss Pack، نؤمن بأن التغليف هو أكثر من مجرد صندوق. إنه الانطباع الأول لمنتجك وفرصة لتعزيز علامتك التجارية. منذ تأسيسنا، ونحن ملتزمون بتقديم أعلى معايير الجودة والابتكار في عالم التغليف.",
-                aboutDesc2: "فريقنا من الخبراء مستعد دائمًا لمواجهة التحديات وتقديم حلول ذكية وفعالة من حيث التكلفة.",
-                aboutButton: "تواصل معنا",
-                stats1: "مشروع مكتمل",
-                stats2: "عميل سعيد",
-                stats3: "سنوات من الخبرة",
-                testimonialsTitle: "ماذا يقول عملاؤنا؟",
-                testimonialsSubtitle: "شهادات نفخر بها من شركاء نجاحنا.",
-                testimonial1: "\"تعامل احترافي وجودة منتجات عالية. ساعدنا Zoss Pack في تحسين صورة منتجاتنا في السوق بشكل كبير. نوصي بهم بشدة.\"",
-                testimonial1Name: "أحمد المحمدي",
-                testimonial1Title: "مدير التسويق، شركة النور",
-                testimonial2: "\"الدقة في المواعيد والاهتمام بالتفاصيل هو ما يميز فريق Zoss Pack. كانوا شريكًا حقيقيًا في نجاحنا.\"",
-                testimonial2Name: "فاطمة علي",
-                testimonial2Title: "مؤسس، علامة أزياء محلية",
-                testimonial3: "\"وجدنا لديهم حلول تغليف مبتكرة واقتصادية لم نجدها في أي مكان آخر. خدمة عملاء ممتازة.\"",
-                testimonial3Name: "خالد ياسين",
-                testimonial3Title: "صاحب مصنع للمواد الغذائية",
-                ctaTitle: "هل أنت مستعد للارتقاء بتغليف منتجاتك؟",
-                ctaSubtitle: "دعنا نساعدك في تصميم وتنفيذ حلول التغليف التي تستحقها علامتك التجارية. اطلب عرض سعر مجاني اليوم!",
-                ctaButton: "اطلب الآن",
-                contactTitle: "تواصل معنا",
-                contactSubtitle: "هل لديك استفسار أو مشروع جديد؟ نحن هنا للمساعدة.",
-                contactInfoTitle: "معلومات الاتصال",
-                address: "مجمع دبي للاستثمار 2،<br>دبي، الإمارات العربية المتحدة",
-                formName: "الاسم الكامل",
-                formEmail: "البريد الإلكتروني",
-                formSubject: "الموضوع",
-                formMessage: "رسالتك",
-                formButton: "إرسال الرسالة",
-                footerRights: "© 2025 Zoss Pack. جميع الحقوق محفوظة."
-            }
-        };
-
-        const setLanguage = (lang) => {
-            localStorage.setItem('preferredLanguage', lang); // Save language preference
-            const elements = document.querySelectorAll('[data-key]');
-            elements.forEach(elem => {
-                const key = elem.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    elem.innerHTML = translations[lang][key];
-                }
-            });
-
-            const placeholderElements = document.querySelectorAll('[data-key-placeholder]');
-            placeholderElements.forEach(elem => {
-                const key = elem.getAttribute('data-key-placeholder');
-                if (translations[lang] && translations[lang][key]) {
-                    elem.placeholder = translations[lang][key];
-                }
-            });
-
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
-            const mainNav = document.getElementById('main-nav');
-            const langSwitcher = document.getElementById('lang-switcher');
-            const mobileLangSwitcher = document.getElementById('mobile-lang-switcher');
-
-            if (lang === 'ar') {
-                mainNav.classList.add('space-x-reverse');
-                langSwitcher.textContent = 'EN';
-                mobileLangSwitcher.textContent = 'EN';
-            } else { // lang === 'en'
-                mainNav.classList.remove('space-x-reverse');
-                langSwitcher.textContent = 'AR';
-                mobileLangSwitcher.textContent = 'AR';
-            }
-        };
-
-        // Language Switcher
-        const langSwitcher = document.getElementById('lang-switcher');
-        const mobileLangSwitcher = document.getElementById('mobile-lang-switcher');
-        
-        const switchLanguage = () => {
-            const currentLang = document.documentElement.lang;
-            const newLang = currentLang === 'ar' ? 'en' : 'ar';
-            setLanguage(newLang);
-        };
-
-        langSwitcher.addEventListener('click', switchLanguage);
-        mobileLangSwitcher.addEventListener('click', switchLanguage);
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Testimonial Slider
-        const slider = document.getElementById('testimonial-slider');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-        let currentIndex = 0;
-        const testimonials = slider.children;
-        const totalTestimonials = testimonials.length;
-
-        function updateSliderPosition() {
-            const lang = document.documentElement.lang;
-            const direction = lang === 'ar' ? 1 : -1;
-            slider.style.transform = `translateX(${currentIndex * 100 * direction}%)`;
-        }
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalTestimonials;
-            updateSliderPosition();
-        });
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
-            updateSliderPosition();
-        });
-
-        // Scroll-based animations and effects
-        const header = document.getElementById('header');
-        const backToTopButton = document.getElementById('back-to-top');
-        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        scrollRevealElements.forEach(elem => observer.observe(elem));
-        
-        window.onscroll = function() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                header.classList.add('scrolled');
-                backToTopButton.style.display = "block";
-            } else {
-                header.classList.remove('scrolled');
-                backToTopButton.style.display = "none";
-            }
-        };
-        
-        // Animated Counters
-        let countersStarted = false;
-        const statsSection = document.getElementById('stats');
-        const counters = document.querySelectorAll('#stats h3');
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersStarted) {
-                    counters.forEach(counter => {
-                        const updateCount = () => {
-                            const target = +counter.getAttribute('data-target');
-                            const count = +counter.innerText;
-                            const increment = target / 200;
-                            if (count < target) {
-                                counter.innerText = `${Math.ceil(count + increment)}`;
-                                setTimeout(updateCount, 10);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCount();
-                    });
-                    countersStarted = true;
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        statsObserver.observe(statsSection);
-
-        // Preloader
-        const preloader = document.getElementById('preloader');
-        window.addEventListener('load', () => {
-            preloader.classList.add('hidden');
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-
-        // Set initial language from localStorage or default to 'ar'
-        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'ar';
-        setLanguage(preferredLanguage);
-    </script>
+<body class="is-loading">
+  <div class="loader" id="loader" aria-hidden="true"><div class="loader-inner"><img src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,enc_avif,quality_auto/logo.png" alt=""><div class="loader-line"><span id="loaderBar"></span></div><small>CRAFTING EXPERIENCE — <b id="loaderCount">0</b>%</small></div></div>
+  <div id="progress"></div><div class="noise"></div><div class="cursor-dot" id="cursorDot"></div><div class="cursor-ring" id="cursorRing"></div>
+  <nav class="nav" id="nav">
+    <a class="logo" href="#home" aria-label="Zoss Pack"><img src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,enc_avif,quality_auto/logo.png" alt="Zoss Pack"></a>
+    <div class="nav-links"><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a><a href="#work" data-ar="أعمالنا" data-en="Work">أعمالنا</a><a href="#about" data-ar="من نحن" data-en="About">من نحن</a><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></div>
+    <div class="nav-actions"><button class="lang" id="lang">EN</button><a href="#contact" class="btn" data-ar="اطلب عرض سعر ↗" data-en="Get a quote ↗">اطلب عرض سعر ↗</a><button class="menu-btn" id="menu" aria-label="القائمة">☰</button></div>
+  </nav>
+  <main>
+    <section class="hero" id="home"><div class="container hero-grid">
+      <div class="hero-text reveal"><span class="eyebrow" data-ar="حلول تغليف متكاملة — دبي" data-en="Integrated packaging — Dubai">حلول تغليف متكاملة — دبي</span><h1 data-ar="نحوّل التغليف إلى <span>تجربة.</span>" data-en="We turn packaging into an <span>experience.</span>">نحوّل التغليف إلى <span>تجربة.</span></h1><p data-ar="نصمم ونطبع وننتج حلول تغليف استثنائية تمنح منتجك حضورًا أقوى، وتحميه، وتحكي قصة علامتك من النظرة الأولى." data-en="We design, print and produce exceptional packaging that protects your product, builds presence and tells your brand story at first sight.">نصمم ونطبع وننتج حلول تغليف استثنائية تمنح منتجك حضورًا أقوى، وتحميه، وتحكي قصة علامتك من النظرة الأولى.</p><div class="hero-actions"><a href="#contact" class="btn" data-ar="ابدأ مشروعك الآن ↗" data-en="Start your project ↗">ابدأ مشروعك الآن ↗</a><a href="#work" class="btn outline" data-ar="شاهد أعمالنا" data-en="Explore our work">شاهد أعمالنا</a></div><div class="trust"><div class="avatars"><img src="https://i.ibb.co/ZzFR9fVd/mo-1.jpg" alt=""><img src="https://i.ibb.co/nM49xdXq/mo-2.jpg" alt=""><img src="https://i.ibb.co/5XxvSmkL/mo3.jpg" alt=""></div><span data-ar="يثق بنا أكثر من 250 عميلًا" data-en="Trusted by 250+ clients">يثق بنا أكثر من 250 عميلًا</span></div></div>
+      <div class="scene reveal" id="scene"><div class="stage-glow"></div><div class="stage-floor"></div><div class="orbit a"></div><div class="orbit b"></div><div class="cube-wrap" id="cubeWrap"><div class="box3d"><div class="face front"><div class="cube-edge"></div><div class="cube-brand"><img class="cube-logo" src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,enc_avif,quality_auto/logo.png" alt="Zoss Pack"><small>PREMIUM CRAFT</small><span>PACKAGING STUDIO</span></div></div><div class="face back"></div><div class="face right"></div><div class="face left"></div><div class="face top"></div><div class="face bottom"></div></div></div><div class="material-card material-one"><img src="https://i.ibb.co/ZzFR9fVd/mo-1.jpg" alt="خامة تغليف"><span><b>MATTE</b><em>01</em></span></div><div class="material-card material-two"><img src="https://i.ibb.co/sJCzXyCp/mo4.jpg" alt="طباعة مخصصة"><span><b>PRINT</b><em>02</em></span></div><div class="scene-spec">SIGNATURE BOX / 2026</div><div class="scene-badge"><i></i><span data-ar="نموذج تفاعلي ثلاثي الأبعاد" data-en="Interactive 3D model">نموذج تفاعلي ثلاثي الأبعاد</span></div></div>
+    </div><a href="#services" class="scroll-cue" aria-label="مرر للأسفل"></a></section>
+    <div class="marquee"><div class="marquee-track"><span>PACKAGING</span><span>PRINTING</span><span>PAPER SUPPLY</span><span>CUSTOM DESIGN</span><span>MADE IN DUBAI</span><span>PACKAGING</span><span>PRINTING</span><span>PAPER SUPPLY</span></div></div>
+    <section class="section" id="services"><div class="container"><div class="section-head reveal"><div><span class="eyebrow" data-ar="ما نقدمه" data-en="What we do">ما نقدمه</span><h2 data-ar="من الفكرة إلى<br>المنتج النهائي." data-en="From concept to<br>finished product.">من الفكرة إلى<br>المنتج النهائي.</h2></div><p data-ar="خبرة متكاملة تحت سقف واحد، لنمنح علامتك حلولًا دقيقة تجمع بين الجمال والجودة والكفاءة." data-en="End-to-end expertise under one roof, combining beauty, quality and efficiency for your brand.">خبرة متكاملة تحت سقف واحد، لنمنح علامتك حلولًا دقيقة تجمع بين الجمال والجودة والكفاءة.</p></div><div class="services-grid">
+      <article class="service tilt reveal"><img src="https://i.ibb.co/bjNxNpTq/packaging.png" alt="خدمة التغليف"><span class="service-index">01</span><h3 data-ar="التغليف" data-en="Packaging">التغليف</h3><p data-ar="عبوات وصناديق مخصصة تحمي منتجك وتترجم شخصية علامتك بدقة." data-en="Custom boxes and packaging that protect your product and express your brand.">عبوات وصناديق مخصصة تحمي منتجك وتترجم شخصية علامتك بدقة.</p></article>
+      <article class="service tilt reveal"><img src="https://i.ibb.co/Zpf1yQWb/print.png" alt="خدمة الطباعة"><span class="service-index">02</span><h3 data-ar="الطباعة" data-en="Printing">الطباعة</h3><p data-ar="طباعة عالية الدقة بألوان نابضة وتفاصيل تمنح تصميمك حضورًا حقيقيًا." data-en="High-definition printing with vibrant colors and exceptional detail.">طباعة عالية الدقة بألوان نابضة وتفاصيل تمنح تصميمك حضورًا حقيقيًا.</p></article>
+      <article class="service tilt reveal"><img src="https://i.ibb.co/N6XYpzgt/paper.png" alt="توريد الورق"><span class="service-index">03</span><h3 data-ar="توريد الورق" data-en="Paper supply">توريد الورق</h3><p data-ar="خيارات مختارة من أجود أنواع الورق والكرتون لكل استخدام وميزانية." data-en="A curated range of premium paper and cardboard for every need.">خيارات مختارة من أجود أنواع الورق والكرتون لكل استخدام وميزانية.</p></article>
+    </div></div></section>
+    <section class="process" id="process"><div class="container"><div class="process-shell reveal"><div class="process-top"><h2 data-ar="رحلة مدروسة، من فكرتك إلى رفوف السوق." data-en="A considered journey, from idea to market shelf.">رحلة مدروسة، من فكرتك إلى رفوف السوق.</h2><p data-ar="نظام عمل واضح يضمن جودة النتيجة في كل مرحلة، من الاستراتيجية حتى التسليم." data-en="A clear process that protects quality at every stage, from strategy to delivery.">نظام عمل واضح يضمن جودة النتيجة في كل مرحلة، من الاستراتيجية حتى التسليم.</p></div><div class="steps"><article class="step"><span class="step-no">01</span><h3 data-ar="نكتشف" data-en="Discover">نكتشف</h3><p data-ar="نفهم منتجك وسوقك وأهداف علامتك." data-en="We understand your product, market and brand goals.">نفهم منتجك وسوقك وأهداف علامتك.</p></article><article class="step"><span class="step-no">02</span><h3 data-ar="نصمم" data-en="Design">نصمم</h3><p data-ar="نحوّل الفكرة إلى نظام تغليف متكامل." data-en="We shape the idea into a complete packaging system.">نحوّل الفكرة إلى نظام تغليف متكامل.</p></article><article class="step"><span class="step-no">03</span><h3 data-ar="ننتج" data-en="Produce">ننتج</h3><p data-ar="تنفيذ دقيق وخامات مختارة بعناية." data-en="Precise production with carefully selected materials.">تنفيذ دقيق وخامات مختارة بعناية.</p></article><article class="step"><span class="step-no">04</span><h3 data-ar="نسلّم" data-en="Deliver">نسلّم</h3><p data-ar="جودة ثابتة وتسليم يلتزم بموعدك." data-en="Consistent quality, delivered to your timeline.">جودة ثابتة وتسليم يلتزم بموعدك.</p></article></div></div></div></section>
+    <section class="section work" id="work"><div class="container"><div class="section-head reveal"><div><span class="eyebrow" data-ar="أعمال مختارة" data-en="Selected work">أعمال مختارة</span><h2 data-ar="تفاصيل تُرى.<br>جودة تُلمس." data-en="Details you see.<br>Quality you feel.">تفاصيل تُرى.<br>جودة تُلمس.</h2></div><p data-ar="نماذج من مشاريع صُنعت لتلفت النظر وتبقى في الذاكرة." data-en="A selection of projects built to attract attention and stay memorable.">نماذج من مشاريع صُنعت لتلفت النظر وتبقى في الذاكرة.</p></div><div class="gallery reveal" id="portfolioGallery"><div class="shot" data-no="01"><img src="https://i.ibb.co/nM49xdXq/mo-2.jpg" alt="صناديق فاخرة"><b>Premium Boxes</b></div><div class="shot" data-no="02"><img src="https://i.ibb.co/5XxvSmkL/mo3.jpg" alt="تغليف مخصص"><b>Custom Packaging</b></div><div class="shot" data-no="03"><img src="https://i.ibb.co/sJCzXyCp/mo4.jpg" alt="تغليف إبداعي"><b>Creative Finish</b></div><div class="shot" data-no="04"><img src="https://i.ibb.co/tTk7y1sj/mo5.jpg" alt="أكياس ورقية"><b>Paper Collection</b></div><div class="shot gallery-more" data-no="05"><img loading="lazy" src="https://i.ibb.co/ZzFR9fVd/mo-1.jpg" alt="علب مخصصة"><b>Signature Packaging</b></div><div class="shot gallery-more" data-no="06"><img loading="lazy" src="https://i.ibb.co/gLKv5LZZ/mo-13-2.jpg" alt="مشروع تغليف فاخر"><b>Luxury Details</b></div><div class="shot gallery-more" data-no="07"><img loading="lazy" src="https://i.ibb.co/bjNxNpTq/packaging.png" alt="حلول تغليف"><b>Packaging Solutions</b></div><div class="shot gallery-more" data-no="08"><img loading="lazy" src="https://i.ibb.co/Zpf1yQWb/print.png" alt="طباعة مخصصة"><b>Premium Print</b></div><div class="shot gallery-more" data-no="09"><img loading="lazy" src="https://i.ibb.co/N6XYpzgt/paper.png" alt="منتجات ورقية"><b>Paper Selection</b></div><div class="shot gallery-more" data-no="10"><img loading="lazy" src="https://i.ibb.co/DPsY8S68/zoss3.png" alt="استوديو Zoss Pack"><b>Zoss Studio</b></div></div><div class="gallery-toggle-wrap reveal"><button class="gallery-toggle" id="galleryToggle" type="button" aria-controls="portfolioGallery" aria-expanded="false"><span id="galleryToggleLabel" data-ar="عرض المزيد من الأعمال" data-en="View more projects" data-ar-less="عرض أقل" data-en-less="Show less">عرض المزيد من الأعمال</span><i aria-hidden="true">＋</i></button></div></div></section>
+    <section class="section" id="about"><div class="container"><div class="about-grid"><div class="about-visual reveal"><img src="https://i.ibb.co/DPsY8S68/zoss3.png" alt="فريق Zoss Pack"><div class="experience"><strong>10+</strong><span data-ar="سنوات نصنع الفرق" data-en="Years making a difference">سنوات نصنع الفرق</span></div></div><div class="about-copy reveal"><span class="eyebrow" data-ar="لماذا Zoss Pack؟" data-en="Why Zoss Pack?">لماذا Zoss Pack؟</span><h2 data-ar="شريك يفهم قيمة الانطباع الأول." data-en="A partner who understands first impressions.">شريك يفهم قيمة الانطباع الأول.</h2><p data-ar="لا ننظر إلى التغليف كصندوق فقط، بل كمساحة تواصل بين علامتك وعميلك. يجمع فريقنا بين التفكير الإبداعي والخبرة الإنتاجية لنقدم حلولًا جميلة، عملية، وقابلة للتنفيذ." data-en="We see packaging as more than a box: it is a conversation between your brand and customer. Our team blends creative thinking with production expertise.">لا ننظر إلى التغليف كصندوق فقط، بل كمساحة تواصل بين علامتك وعميلك. يجمع فريقنا بين التفكير الإبداعي والخبرة الإنتاجية لنقدم حلولًا جميلة، عملية، وقابلة للتنفيذ.</p><div class="features"><div class="feature"><i>✓</i><span data-ar="جودة موثوقة" data-en="Reliable quality">جودة موثوقة</span></div><div class="feature"><i>✓</i><span data-ar="حلول مخصصة" data-en="Custom solutions">حلول مخصصة</span></div><div class="feature"><i>✓</i><span data-ar="التزام بالمواعيد" data-en="On-time delivery">التزام بالمواعيد</span></div><div class="feature"><i>✓</i><span data-ar="دعم مستمر" data-en="Ongoing support">دعم مستمر</span></div></div><a href="#contact" class="btn" data-ar="تحدث مع فريقنا ↗" data-en="Talk to our team ↗">تحدث مع فريقنا ↗</a></div></div><div class="stats reveal"><div class="stat"><strong data-count="500">0</strong><span data-ar="مشروع مكتمل" data-en="Completed projects">مشروع مكتمل</span></div><div class="stat"><strong data-count="250">0</strong><span data-ar="عميل سعيد" data-en="Happy clients">عميل سعيد</span></div><div class="stat"><strong data-count="10">0</strong><span data-ar="سنوات خبرة" data-en="Years of experience">سنوات خبرة</span></div></div></div></section>
+    <section class="section contact" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow" data-ar="لنبدأ" data-en="Let's begin">لنبدأ</span><h2 data-ar="مشروعك القادم يبدأ برسالة." data-en="Your next project starts with a message.">مشروعك القادم يبدأ برسالة.</h2><p data-ar="شاركنا فكرتك واحتياجاتك، وسيتواصل معك فريقنا لمساعدتك في اختيار الحل الأنسب." data-en="Tell us about your idea and needs. Our team will help you choose the right solution.">شاركنا فكرتك واحتياجاتك، وسيتواصل معك فريقنا لمساعدتك في اختيار الحل الأنسب.</p><div class="contact-line"><i>☎</i><a href="tel:+97148866380" dir="ltr">+971 4 886 6380</a></div><div class="contact-line"><i>✉</i><a href="mailto:info@zoss.ae">info@zoss.ae</a></div><div class="contact-line"><i>⌖</i><span data-ar="مجمع دبي للاستثمار 2، دبي" data-en="Dubai Investment Park 2, Dubai">مجمع دبي للاستثمار 2، دبي</span></div></div><form id="contactForm" class="form reveal" action="https://formspree.io/f/xwpqeeob" method="POST"><div class="field-row"><div class="field"><label data-ar="الاسم الكامل" data-en="Full name">الاسم الكامل</label><input name="name" required autocomplete="name"></div><div class="field"><label data-ar="البريد الإلكتروني" data-en="Email address">البريد الإلكتروني</label><input type="email" name="email" required autocomplete="email"></div></div><div class="field"><label data-ar="موضوع الرسالة" data-en="Subject">موضوع الرسالة</label><input name="subject" required></div><div class="field"><label data-ar="أخبرنا عن مشروعك" data-en="Tell us about your project">أخبرنا عن مشروعك</label><textarea name="message" rows="5" required></textarea></div><button class="btn" type="submit" data-ar="إرسال الطلب ↗" data-en="Send request ↗">إرسال الطلب ↗</button><input class="hp-field" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><p id="formStatus" class="form-status" role="status" aria-live="polite"></p></form></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><img src="https://static.wixstatic.com/media/37430f_65513d75e3cb4e6bb6afa5d3db65c23f~mv2.png/v1/fill/w_274,h_82,al_c,q_85,enc_avif,quality_auto/logo.png" alt="Zoss Pack"><p>© <span id="year"></span> Zoss Pack. <span data-ar="جميع الحقوق محفوظة." data-en="All rights reserved.">جميع الحقوق محفوظة.</span></p><div class="socials"><a href="https://www.instagram.com/zosspack/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.facebook.com/profile.php?id=61575127876927" target="_blank" rel="noopener" aria-label="Facebook">FB</a></div></div></footer>
+  <a class="whatsapp" href="https://wa.me/97148866380" target="_blank" rel="noopener" aria-label="WhatsApp">واتساب ↗</a>
+  <script>
+    const nav=document.getElementById('nav'),progress=document.getElementById('progress'),scene=document.getElementById('scene'),cubeWrap=document.getElementById('cubeWrap');
+    addEventListener('scroll',()=>{const y=scrollY,d=document.documentElement.scrollHeight-innerHeight;nav.classList.toggle('scrolled',y>40);progress.style.width=(y/Math.max(d,1)*100)+'%'},{passive:true});
+    document.getElementById('menu').onclick=()=>nav.classList.toggle('open');document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+    const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');reveal.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>reveal.observe(e));
+    const counter=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const n=e.target,t=+n.dataset.count,start=performance.now();function tick(now){const p=Math.min((now-start)/1500,1);n.textContent=Math.floor(t*(1-Math.pow(1-p,3)))+'+';if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);counter.unobserve(n)}),{threshold:.7});document.querySelectorAll('[data-count]').forEach(e=>counter.observe(e));
+    const sectionSpy=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});document.querySelectorAll('main section[id]').forEach(s=>sectionSpy.observe(s));
+    if(matchMedia('(pointer:fine)').matches){
+      document.querySelectorAll('.tilt').forEach(card=>{card.onmousemove=e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`};card.onmouseleave=()=>card.style.transform=''});
+      scene.onmousemove=e=>{const r=scene.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;cubeWrap.style.transform=`translate(-50%,-50%) rotateX(${-10-y*13}deg) rotateY(${-24+x*20}deg)`;scene.querySelector('.material-one').style.transform=`rotate(${-7+x*3}deg) translate(${x*18}px,${y*12}px)`;scene.querySelector('.material-two').style.transform=`rotate(${7+x*3}deg) translate(${-x*18}px,${-y*12}px)`};scene.onmouseleave=()=>{cubeWrap.style.transform='';scene.querySelector('.material-one').style.transform='';scene.querySelector('.material-two').style.transform=''};
+      const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');let mx=-100,my=-100,rx=-100,ry=-100;addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`},{passive:true});(function cursorLoop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(cursorLoop)})();document.querySelectorAll('a,button,.service,.shot').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hover'));el.addEventListener('mouseleave',()=>ring.classList.remove('hover'))});
+    }
+    const loader=document.getElementById('loader'),loaderBar=document.getElementById('loaderBar'),loaderCount=document.getElementById('loaderCount');let loaderFinished=false;function finishLoader(){if(loaderFinished)return;loaderFinished=true;loaderBar.style.width='100%';loaderCount.textContent='100';setTimeout(()=>{loader.classList.add('done');document.body.classList.remove('is-loading')},220)}function loaderTick(now){const progressValue=Math.min((now-loaderStart)/850,1),eased=1-Math.pow(1-progressValue,3),shown=Math.round(eased*100);loaderBar.style.width=shown+'%';loaderCount.textContent=shown;if(progressValue<1)requestAnimationFrame(loaderTick);else finishLoader()}const loaderStart=performance.now();requestAnimationFrame(loaderTick);addEventListener('load',()=>setTimeout(finishLoader,100),{once:true});setTimeout(finishLoader,1400);
+    const portfolioGallery=document.getElementById('portfolioGallery'),galleryToggle=document.getElementById('galleryToggle'),galleryToggleLabel=document.getElementById('galleryToggleLabel');function updateGalleryToggle(){const expanded=galleryToggle.getAttribute('aria-expanded')==='true',currentLang=document.documentElement.lang||'ar';galleryToggleLabel.textContent=expanded?galleryToggleLabel.dataset[currentLang+'Less']:galleryToggleLabel.dataset[currentLang]}window.updateGalleryToggle=updateGalleryToggle;galleryToggle.addEventListener('click',()=>{const willExpand=galleryToggle.getAttribute('aria-expanded')!=='true';galleryToggle.setAttribute('aria-expanded',String(willExpand));portfolioGallery.classList.toggle('show-all',willExpand);updateGalleryToggle();if(!willExpand)setTimeout(()=>galleryToggle.scrollIntoView({behavior:'smooth',block:'center'}),50)});
+    const langBtn=document.getElementById('lang');let lang=localStorage.getItem('zoss-lang')||'ar';function setLang(l){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';langBtn.textContent=l==='ar'?'EN':'AR';document.querySelectorAll('[data-ar]').forEach(e=>{const value=e.dataset[l]??'';if(e.dataset.textOnly==='true')e.textContent=value;else e.innerHTML=value});document.querySelectorAll('[data-alt-ar]').forEach(e=>{e.alt=e.dataset[l==='ar'?'altAr':'altEn']||e.alt});updateGalleryToggle();localStorage.setItem('zoss-lang',l)}langBtn.onclick=()=>setLang(lang==='ar'?'en':'ar');setLang(lang);document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+  <script>
+    if(matchMedia('(pointer:fine)').matches){const cursorRing=document.getElementById('cursorRing'),cursorTargets='a,button,.service,.shot';document.addEventListener('mouseover',e=>{if(e.target.closest?.(cursorTargets))cursorRing.classList.add('hover')},{passive:true});document.addEventListener('mouseout',e=>{const from=e.target.closest?.(cursorTargets),to=e.relatedTarget?.closest?.(cursorTargets);if(from&&!to)cursorRing.classList.remove('hover')},{passive:true})}
+  </script>
+  <script type="module" src="./site-firebase.js"></script>
 </body>
 </html>
